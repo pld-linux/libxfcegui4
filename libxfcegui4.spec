@@ -19,6 +19,7 @@ BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libxml2-devel >= 2.4.0
+Requires:	gtk-doc-common
 Requires:	gtk+2 >= 2.0.6
 Requires:	libxfce4util >= 4.1.13
 Requires:	startup-notification >= 0.5
@@ -67,7 +68,8 @@ Statyczna biblioteka libxfce4util.
 %{__automake}
 %{__autoconf}
 %configure \
-	--enable-xinerama
+	--enable-xinerama \
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
@@ -90,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/xfce4/modules
 %attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so.*.*
 %{_datadir}/xfce4/mime
-%{_datadir}/gtk-doc/html/libxfcegui4
+%{_gtkdocdir}/libxfcegui4
 
 %files devel
 %defattr(644,root,root,755)
