@@ -37,6 +37,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2.0.6
 Requires:	libxfce4util-devel >= %{version}
+Requires:	startup-notification-devel >= 0.5
 
 %description devel
 Development files for the libxfcegui4 library.
