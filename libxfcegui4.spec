@@ -1,15 +1,12 @@
-
-%define		_snap 20040816
-
 Summary:	Various gtk widgets for XFce
 Summary(pl):	Ró¿ne widgety gtk dla XFce
 Name:		libxfcegui4
-Version:	4.1.27
-Release:	0.%{_snap}.1
+Version:	4.1.90
+Release:	0.1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	2ec2c9233bbe3e985123a337e98cc9d2
+Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	7491b5b6768e226008a0e254a46c9e94
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -61,7 +58,7 @@ Static libxfce4util library.
 Statyczna biblioteka libxfce4util.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 %{__libtoolize}
