@@ -19,6 +19,7 @@ BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libxml2-devel >= 2.4.0
+Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
