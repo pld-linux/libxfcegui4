@@ -11,7 +11,7 @@ URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.2.0
+BuildRequires:	gtk+2-devel >= 1:2.2.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= 4.1.13
 BuildRequires:	pkgconfig >= 0.9.0
@@ -19,8 +19,7 @@ BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libxml2-devel >= 2.4.0
-Requires:	gtk-doc-common
-Requires:	gtk+2 >= 2.2.0
+Requires:	gtk+2 >= 1:2.2.0
 Requires:	libxfce4util >= 4.1.13
 Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +35,8 @@ Summary:	Development files for libxfcegui4 library
 Summary(pl):	Pliki nag³ówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2.2.0
+Requires:	gtk+2-devel >= 1:2.2.0
+Requires:	gtk-doc-common
 Requires:	libxfce4util-devel >= 4.1.13
 Requires:	startup-notification-devel >= 0.5
 
@@ -89,20 +89,21 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%dir %{_libdir}/xfce4
 %dir %{_libdir}/xfce4/modules
 %attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so.*.*
 %{_datadir}/xfce4/mime
-%{_gtkdocdir}/libxfcegui4
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so
-%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.la
+%{_libdir}/xfce4/modules/lib*.la
 %{_libdir}/lib*.la
 %{_includedir}/xfce4/libxfcegui4
 %{_includedir}/xfce4/xfce4-modules
 %{_pkgconfigdir}/*.pc
+%{_gtkdocdir}/libxfcegui4
 
 %files static
 %defattr(644,root,root,755)
