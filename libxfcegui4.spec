@@ -44,7 +44,7 @@ Pliki nag³ówkowe biblioteki libxfcegui4.
 %package static
 Summary:	Static libxfce4util library
 Summary(pl):	Statyczna biblioteka libxfce4util
-Group:		Development/Libriaries
+Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
