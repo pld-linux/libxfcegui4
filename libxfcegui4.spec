@@ -1,18 +1,18 @@
 Summary:	Various gtk widgets for xfce
 Summary(pl):	Ró¿ne widgety gtk dla xfce
 Name:		libxfcegui4
-Version:	3.99.4
+Version:	4.0.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://www.xfce.org/archive/xfce4-rc4/src/%{name}-%{version}.tar.gz
-# Source0-md5:	ed2fb50cc4a321c74c0675867038f65d
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
+# Source0-md5:	8c9f565d416d1e1c11587de6bc26b3cd
 URL:		http://www.xfce.org/
 BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	libxfce4util-devel >= 3.99.4
+BuildRequires:	libxfce4util-devel >= 4.0.0
 BuildRequires:	pkgconfig >= 0.9.0
 Requires:	gtk+2 >= 2.0.6
-Requires:	libxfce4util >= 3.99.4
+Requires:	libxfce4util >= 4.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,7 +27,7 @@ Summary(pl):	Pliki nag³ówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+2-devel >= 2.0.6
-Requires:	libxfce4util-devel >= 3.90.0
+Requires:	libxfce4util-devel >= 4.0.0
 
 %description devel
 Development files for the libxfcegui4 library.
