@@ -11,7 +11,7 @@ URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.0.6
+BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= 4.1.13
 BuildRequires:	pkgconfig >= 0.9.0
@@ -20,7 +20,7 @@ BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libxml2-devel >= 2.4.0
 Requires:	gtk-doc-common
-Requires:	gtk+2 >= 2.0.6
+Requires:	gtk+2 >= 2.2.0
 Requires:	libxfce4util >= 4.1.13
 Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,8 +36,8 @@ Summary:	Development files for libxfcegui4 library
 Summary(pl):	Pliki nag³ówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2.0.6
-Requires:	libxfce4util-devel >= 4.1.11
+Requires:	gtk+2-devel >= 2.2.0
+Requires:	libxfce4util-devel >= 4.1.13
 Requires:	startup-notification-devel >= 0.5
 
 %description devel
