@@ -18,7 +18,7 @@ BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	startup-notification >= 0.5
+BuildRequires:	startup-notification-devel >= 0.5
 Requires:	gtk+2 >= 2.0.6
 Requires:	libxfce4util >= %{version}
 Requires:	startup-notification >= 0.5
