@@ -1,28 +1,30 @@
 
-%define		_snap 20040806
+%define		_snap 20040813
 
 Summary:	Various gtk widgets for XFce
 Summary(pl):	Ró¿ne widgety gtk dla XFce
 Name:		libxfcegui4
-Version:	4.2.0
+Version:	4.1.27
 Release:	0.%{_snap}.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	d0bf006ab882bcea8a4b7414cdacfd3e
+# Source0-md5:	6a9d6e486ed8df9c5e8650ae40f1c667
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libtool
-BuildRequires:	libxfce4util-devel >= 4.1.11
+BuildRequires:	libxfce4util-devel >= 4.1.13
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
-BuildRequires:	dbh-devel
-BuildRequires:	librsvg-devel
+BuildRequires:	dbh-devel >= 1.0
+BuildRequires:	librsvg-devel >= 2.0
+BuildRequires:	libxml2-devel >= 2.4.0
+BuildRequires:	gtk-doc >= 1.0
 Requires:	gtk+2 >= 2.0.6
-Requires:	libxfce4util >= 4.1.11
+Requires:	libxfce4util >= 4.1.13
 Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
