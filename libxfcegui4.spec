@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	5a7dcdf6c16226b05b35fbfb4049098e
 URL:		http://www.xfce.org/
+BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -51,6 +52,7 @@ Statyczna biblioteka libxfce4util.
 %setup -q
 
 %build
+cp /usr/share/automake/config.sub .
 %configure \
 	--enable-xinerama
 %{__make}
