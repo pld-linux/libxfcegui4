@@ -1,5 +1,5 @@
-Summary:	Various gtk widgets for XFce
-Summary(pl):	Ró¿ne widgety gtk dla XFce
+Summary:	Various GTK+ widgets for XFce
+Summary(pl):	Ró¿ne widgety GTK+ dla XFce
 Name:		libxfcegui4
 Version:	4.1.99.1
 Release:	1
@@ -26,10 +26,10 @@ Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Various gtk widgets for XFce.
+Various GTK+ widgets for XFce.
 
 %description -l pl
-Ró¿ne widgety gtk dla XFce.
+Ró¿ne widgety GTK+ dla XFce.
 
 %package devel
 Summary:	Development files for libxfcegui4 library
