@@ -1,16 +1,20 @@
+#
+%define		snap 20040616
+#
 Summary:	Various gtk widgets for XFce
 Summary(pl):	Ró¿ne widgety gtk dla XFce
 Name:		libxfcegui4
-Version:	4.0.5
-Release:	1
+Version:	4.1.0
+Release:	0.%{snap}.1
 License:	LGPL
 Group:		Libraries
-#Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	97c2cb99c284b2e55270d5723cd422d6
+Source0:	%{name}-snap-%{snap}.tar.bz2
+# Source0-md5:	e4f17ff2dbf17f905f5a0e998156d80c
 URL:		http://www.xfce.org/
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.0.6
+BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
 Requires:	gtk+2 >= 2.0.6
@@ -50,17 +54,24 @@ Static libxfce4util library.
 Statyczna biblioteka libxfce4util.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
-cp /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoheader}
+%{__automake}
+%{__autoconf}
 %configure \
 	--enable-xinerama
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
