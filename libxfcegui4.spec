@@ -10,6 +10,7 @@ Source0: 	http://dl.sourceforge.net/xfce/%{name}-%{version}.tar.gz
 URL: 		http://www.xfce.org/
 BuildRequires: 	gtk+2-devel >= 2.0.6
 BuildRequires:	libxfce4util-devel >= 3.90.0
+BuildRequires:	pkgconfig >= 0.9.0
 Requires:	gtk+2 >= 2.0.6
 Requires:	libxfce4util >= 3.90.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
