@@ -1,26 +1,23 @@
-#
-%define		snap 20040616
-#
 Summary:	Various gtk widgets for XFce
 Summary(pl):	Ró¿ne widgety gtk dla XFce
 Name:		libxfcegui4
-Version:	4.1.0
-Release:	0.%{snap}.1
+Version:	4.1.26
+Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	%{name}-snap-%{snap}.tar.bz2
-# Source0-md5:	e4f17ff2dbf17f905f5a0e998156d80c
+Source0:	http://lo1sanok.eu.org/~troll/PLD/xfce4/%{name}-%{version}.tar.bz2
+# Source0-md5:	42401e82800f06695d7e99653383b4b7
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libtool
-BuildRequires:	libxfce4util-devel >= %{version}
+BuildRequires:	libxfce4util-devel >= 4.1.11
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 Requires:	gtk+2 >= 2.0.6
-Requires:	libxfce4util >= %{version}
+Requires:	libxfce4util >= 4.1.11
 Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,7 +33,7 @@ Summary(pl):	Pliki nag³ówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2.0.6
-Requires:	libxfce4util-devel >= %{version}
+Requires:	libxfce4util-devel >= 4.1.11
 Requires:	startup-notification-devel >= 0.5
 
 %description devel
@@ -58,7 +55,16 @@ Static libxfce4util library.
 Statyczna biblioteka libxfce4util.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+# Workaround for nonexistant xfce4-modules which is going to appear (sometime)
+mkdir -p xfce4-modules/{mime{,-icons,-applications},headers,combo}
+for i in xfce4-modules/{,mime{,-icons,-applications},headers,combo}/Makefile.in
+do
+    cat << EOF > $i
+all:
+install:
+EOF
+done
 
 %build
 %{__libtoolize}
