@@ -11,14 +11,17 @@ Group:		Libraries
 Source0:	%{name}-snap-%{snap}.tar.bz2
 # Source0-md5:	e4f17ff2dbf17f905f5a0e998156d80c
 URL:		http://www.xfce.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	startup-notification >= 0.5
 Requires:	gtk+2 >= 2.0.6
 Requires:	libxfce4util >= %{version}
+Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
