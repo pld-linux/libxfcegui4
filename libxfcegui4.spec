@@ -6,7 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce4-rc3/src/%{name}-%{version}.tar.gz
-# Source0-md5:	90aa5296edaed36b226f40a005ae0873
+# Source0-md5:	99d18c964f8593af39d0ead8ea363932
 URL:		http://www.xfce.org/
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libxfce4util-devel >= 3.99.2
