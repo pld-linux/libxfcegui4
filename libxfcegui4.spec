@@ -14,7 +14,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 1:2.2.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= 4.1.13
-BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
