@@ -9,10 +9,10 @@ Source0:	http://www.xfce.org/archive/xfce4-rc3/src/%{name}-%{version}.tar.gz
 # Source0-md5:	99d18c964f8593af39d0ead8ea363932
 URL:		http://www.xfce.org/
 BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	libxfce4util-devel >= 3.99.2
+BuildRequires:	libxfce4util-devel >= 3.99.3
 BuildRequires:	pkgconfig >= 0.9.0
 Requires:	gtk+2 >= 2.0.6
-Requires:	libxfce4util >= 3.99.2
+Requires:	libxfce4util >= 3.99.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
