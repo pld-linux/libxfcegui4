@@ -2,8 +2,8 @@ Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
 Version:	4.1.99.3
-Release:	1
-License:	LGPL
+Release:	2
+License:	GPL v2
 Group:		Libraries
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	802e5b50887f6a34ac82cc734d136366
@@ -13,15 +13,12 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 1:2.2.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4util-devel >= 4.1.13
+BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libxml2-devel >= 2.4.0
-Requires:	gtk+2 >= 1:2.2.0
-Requires:	libxfce4util >= 4.1.13
-Requires:	startup-notification >= 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +34,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 1:2.2.0
 Requires:	gtk-doc-common
-Requires:	libxfce4util-devel >= 4.1.13
+Requires:	libxfce4util-devel >= %{version}
 Requires:	startup-notification-devel >= 0.5
 
 %description devel
