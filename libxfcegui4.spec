@@ -74,8 +74,12 @@ Statyczna biblioteka libxfce4util.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# modules loaded through gmodule
+rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/modules/*.{la,a}
 
 %find_lang %{name}
 
@@ -91,14 +95,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_libdir}/xfce4
 %dir %{_libdir}/xfce4/modules
-%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so.*.*
+# why -avoid-version only on Cygwin?
+%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so*
 %{_datadir}/xfce4/mime
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so
-%{_libdir}/xfce4/modules/lib*.la
 %{_libdir}/lib*.la
 %{_includedir}/xfce4/libxfcegui4
 %{_includedir}/xfce4/xfce4-modules
@@ -108,4 +111,3 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
-%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.a
