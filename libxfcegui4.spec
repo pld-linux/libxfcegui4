@@ -13,7 +13,6 @@ BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xcursor-devel
 Requires:	gtk+2 >= 2.0.6
 Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
