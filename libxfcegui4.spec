@@ -22,7 +22,6 @@ BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libxml2-devel >= 2.4.0
-BuildRequires:	gtk-doc >= 1.0
 Requires:	gtk+2 >= 2.0.6
 Requires:	libxfce4util >= 4.1.13
 Requires:	startup-notification >= 0.5
