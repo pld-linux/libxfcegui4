@@ -1,5 +1,5 @@
 
-%define		_snap 20040813
+%define		_snap 20040816
 
 Summary:	Various gtk widgets for XFce
 Summary(pl):	Ró¿ne widgety gtk dla XFce
@@ -9,7 +9,7 @@ Release:	0.%{_snap}.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	6a9d6e486ed8df9c5e8650ae40f1c667
+# Source0-md5:	2ec2c9233bbe3e985123a337e98cc9d2
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
