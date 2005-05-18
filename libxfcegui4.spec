@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	libxml2-devel >= 2.4.0
+BuildRequires:	xfce4-dev-tools
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
