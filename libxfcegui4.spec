@@ -1,12 +1,12 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.2.1
+Version:	4.2.2
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	b9f19e48fe64eec4cb0878dd0c795d9d
+# Source0-md5:	e88d6e8379eae60cee6dd6122bf3ae59
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -61,7 +61,7 @@ Statyczna biblioteka libxfce4util.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I m4
+%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
 %{__autoheader}
 %{__automake}
 %{__autoconf}
