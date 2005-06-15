@@ -1,3 +1,4 @@
+%bcond_without	static_libs	# don't build static library
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
@@ -68,7 +69,8 @@ Statyczna biblioteka libxfce4util.
 %{__autoconf}
 %configure \
 	--enable-xinerama \
-	--with-html-dir=%{_gtkdocdir}
+	--with-html-dir=%{_gtkdocdir} \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -109,6 +111,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*.pc
 %{_gtkdocdir}/libxfcegui4
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
