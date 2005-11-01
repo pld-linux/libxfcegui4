@@ -5,7 +5,7 @@ Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
 Version:	4.2.2
-Release:	2
+Release:	3
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 # modules loaded through gmodule
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/modules/*.{la,a}
+
+# assume bn==bn_IN as no translation for bn_BD appeared till now
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/bn{_IN,}
 
 %find_lang %{name}
 
