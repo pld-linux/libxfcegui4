@@ -10,7 +10,6 @@ License:	LGPL v2
 Group:		Libraries
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	5d2bae78c5ef66e914ae7a930bbdeb57
-Patch0:		%{name}-taskbar.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -64,7 +63,6 @@ Statyczna biblioteka libxfce4util.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
