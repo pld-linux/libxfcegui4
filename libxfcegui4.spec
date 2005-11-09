@@ -14,7 +14,7 @@ URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-#BuildRequires:	gtk-doc
+BuildRequires:	gtk-doc
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
