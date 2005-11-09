@@ -1,18 +1,17 @@
---- libxfcegui4-4.2.2/libxfcegui4/netk-tasklist.c	2005-05-15 09:53:29.000000000 +0200
-+++ libxfcegui4-4.2.2.new/libxfcegui4/netk-tasklist.c	2005-07-31 16:19:44.000000000 +0200
-@@ -2238,8 +2238,14 @@
+--- libxfcegui4-4.2.3/libxfcegui4/netk-tasklist.c~	2005-11-09 03:56:14.035364288 +0100
++++ libxfcegui4-4.2.3/libxfcegui4/netk-tasklist.c	2005-11-09 05:21:28.931781840 +0100
+@@ -2238,8 +2238,13 @@
+ 
+     text = netk_task_get_text (task);
+ 
+-    gtk_table_attach (GTK_TABLE (table),
++    if(GTK_CHECK_VERSION(2, 7, 0)) {
++	gtk_table_attach (GTK_TABLE (table),
++                      task->image, 0, 1, 0, 1, GTK_EXPAND|GTK_FILL|GTK_SHRINK, GTK_EXPAND, 0, 0);
++    } else {
++	gtk_table_attach (GTK_TABLE (table),
+                       task->image, 0, 1, 0, 1, 0, GTK_EXPAND, 0, 0);
++    }
+ 
      if (task->tasklist->priv->show_label) {
          task->label = gtk_label_new (text);
-         gtk_widget_show (task->label);
--        gtk_table_attach (GTK_TABLE (table),
-+        if(GTK_CHECK_VERSION(2, 7, 0)){
-+            gtk_table_attach (GTK_TABLE (table),
-+                      task->label, 1, 2, 0, 1, GTK_EXPAND|GTK_FILL|GTK_SHRINK, GTK_EXPAND, 0, 0);
-+        }
-+        else{
-+            gtk_table_attach (GTK_TABLE (table),
-                       task->label, 1, 2, 0, 1, GTK_EXPAND, GTK_EXPAND, 0, 0);
-+        }
-     }
- 
-     gtk_container_add (GTK_CONTAINER (task->button), table);
