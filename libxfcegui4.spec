@@ -13,15 +13,16 @@ Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	gettext-devel
 BuildRequires:	gtk-doc-automake
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
-BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	startup-notification-devel >= 0.5
-BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	libxml2-devel >= 2.4.0
+BuildRequires:	pkgconfig >= 1:0.9.0
+BuildRequires:	rpmbuild(macros) >= 1.98
+BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	xfce4-dev-tools
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libxfce4util >= %{version}
