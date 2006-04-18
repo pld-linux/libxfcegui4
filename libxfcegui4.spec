@@ -4,12 +4,12 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.2.3
+Version:	4.3.90.1
 Release:	1
 License:	LGPL v2
 Group:		Libraries
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	5d2bae78c5ef66e914ae7a930bbdeb57
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	55053ee6f434d5c5dd75aa45dd21e84c
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -101,12 +101,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%dir %{_libdir}/xfce4
-%dir %{_libdir}/xfce4/modules
+#%dir %{_libdir}/xfce4
+#%dir %{_libdir}/xfce4/modules
 # why -avoid-version only on Cygwin?
-%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so*
-%{_datadir}/xfce4/mime
-%{_datadir}/xfce4/hicolor-index.theme
+#%attr(755,root,root) %{_libdir}/xfce4/modules/lib*.so*
+#%{_datadir}/xfce4/mime
+#%{_datadir}/xfce4/hicolor-index.theme
 %{_datadir}/xfce4/xfce-svg-test.svg
 
 %files devel
@@ -114,9 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/xfce4/libxfcegui4
-%{_includedir}/xfce4/xfce4-modules
+#%{_includedir}/xfce4/xfce4-modules
 %{_pkgconfigdir}/*.pc
-%{_gtkdocdir}/libxfcegui4
+#%{_gtkdocdir}/libxfcegui4
 
 %if %{with static_libs}
 %files static
