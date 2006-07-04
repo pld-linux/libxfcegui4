@@ -4,25 +4,25 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.2.2
-Release:	3
+Version:	4.2.3
+Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	e88d6e8379eae60cee6dd6122bf3ae59
-Patch0:		%{name}-taskbar.patch
+# Source0-md5:	5d2bae78c5ef66e914ae7a930bbdeb57
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	gettext-devel
-BuildRequires:	gtk-doc
+BuildRequires:	gtk-doc-automake
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
-BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	startup-notification-devel >= 0.5
-BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	libxml2-devel >= 2.4.0
+BuildRequires:	pkgconfig >= 1:0.9.0
+BuildRequires:	rpmbuild(macros) >= 1.98
+BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	xfce4-dev-tools
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libxfce4util >= %{version}
@@ -64,7 +64,6 @@ Statyczna biblioteka libxfce4util.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
