@@ -5,27 +5,27 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl):	Ró¿ne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.3.99.1
+Version:	4.3.99.2
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	519bca1ba08e51f03584ce6c007cd10d
+# Source0-md5:	98679c67ac65c376833deacec9fcbecf
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	gettext-devel
 BuildRequires:	gtk-doc-automake
-BuildRequires:	gtk+2-devel >= 2:2.10.1
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
-BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= %{version}
-Requires:	gtk+2 >= 2:2.10.1
+Requires:	gtk+2 >= 2:2.10.6
 Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,7 +40,7 @@ Summary:	Development files for libxfcegui4 library
 Summary(pl):	Pliki nag³ówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.10.1
+Requires:	gtk+2-devel >= 2:2.10.6
 Requires:	gtk-doc-common
 Requires:	libxfce4util-devel >= %{version}
 Requires:	startup-notification-devel >= 0.8
@@ -74,6 +74,7 @@ Statyczna biblioteka libxfce4util.
 %{__autoconf}
 %configure \
 	--enable-xinerama \
+	--enable-startup-notification \
 	--with-html-dir=%{_gtkdocdir} \
 	%{!?with_static_libs:--disable-static}
 %{__make}
