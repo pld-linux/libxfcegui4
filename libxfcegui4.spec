@@ -10,7 +10,7 @@ Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	98679c67ac65c376833deacec9fcbecf
+# Source0-md5:	130cf67881f79c4f6ec4881a1d0d588f
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
