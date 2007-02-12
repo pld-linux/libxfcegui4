@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Various GTK+ widgets for Xfce
-Summary(pl):	R�ne widgety GTK+ dla Xfce
+Summary(pl.UTF-8):   Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
 Version:	4.4.0
 Release:	1
@@ -32,24 +32,24 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Various GTK+ widgets for Xfce.
 
-%description -l pl
-R�ne widgety GTK+ dla Xfce.
+%description -l pl.UTF-8
+Różne widgety GTK+ dla Xfce.
 
 %package apidocs
 Summary:	libxfcegui4 API documentation
-Summary(pl):	Dokumentacja API libxfcegui4
+Summary(pl.UTF-8):   Dokumentacja API libxfcegui4
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
 libxfcegui4 API documentation.
 
-%description apidocs -l pl
+%description apidocs -l pl.UTF-8
 Dokumentacja API libxfcegui4.
 
 %package devel
 Summary:	Development files for libxfcegui4 library
-Summary(pl):	Pliki nag��wkowe biblioteki libxfcegui4
+Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.6
@@ -59,19 +59,19 @@ Requires:	startup-notification-devel >= 0.8
 %description devel
 Development files for the libxfcegui4 library.
 
-%description devel -l pl
-Pliki nag��wkowe biblioteki libxfcegui4.
+%description devel -l pl.UTF-8
+Pliki nagłówkowe biblioteki libxfcegui4.
 
 %package static
 Summary:	Static libxfcegui4 library
-Summary(pl):	Statyczna biblioteka libxfcegui4
+Summary(pl.UTF-8):   Statyczna biblioteka libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libxfcegui4 library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libxfcegui4.
 
 %prep
