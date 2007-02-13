@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Various GTK+ widgets for Xfce
-Summary(pl.UTF-8):   Różne widgety GTK+ dla Xfce
+Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
 Version:	4.4.0
 Release:	1
@@ -37,7 +37,7 @@ Różne widgety GTK+ dla Xfce.
 
 %package apidocs
 Summary:	libxfcegui4 API documentation
-Summary(pl.UTF-8):   Dokumentacja API libxfcegui4
+Summary(pl.UTF-8):	Dokumentacja API libxfcegui4
 Group:		Documentation
 Requires:	gtk-doc-common
 
@@ -49,7 +49,7 @@ Dokumentacja API libxfcegui4.
 
 %package devel
 Summary:	Development files for libxfcegui4 library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libxfcegui4
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.6
@@ -64,7 +64,7 @@ Pliki nagłówkowe biblioteki libxfcegui4.
 
 %package static
 Summary:	Static libxfcegui4 library
-Summary(pl.UTF-8):   Statyczna biblioteka libxfcegui4
+Summary(pl.UTF-8):	Statyczna biblioteka libxfcegui4
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
