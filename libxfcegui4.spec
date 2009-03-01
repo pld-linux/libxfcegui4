@@ -30,6 +30,7 @@ BuildRequires:	xfconf-devel >= %{version}
 BuildRequires:	xorg-lib-libSM-devel
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
+Requires:	xfconf >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -144,7 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libglade/2.0/libxfce4.so
 %{_iconsdir}/hicolor/*/apps/*.png
 %{_iconsdir}/hicolor/*/apps/*.svg
-%{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml
+%{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
 %files apidocs
 %defattr(644,root,root,755)
