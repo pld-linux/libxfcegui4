@@ -5,12 +5,12 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.6.0
-Release:	2
+Version:	4.6.1
+Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	8627ae4fad26289f55f0afbebe238bf5
+# Source0-md5:	539cff747634b8ee6f0d2362ee78a286
 URL:		http://www.xfce.org/projects/libraries/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -115,9 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 
 # assume bn==bn_IN as no translation for bn_BD appeared till now
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/bn{_IN,}
-
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/glade3/modules/libgladexfce4.{a,la}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/libxfce4.{a,la}
