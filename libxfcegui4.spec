@@ -14,8 +14,10 @@ Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.
 URL:		http://www.xfce.org/projects/libraries/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	gtk-doc
 BuildRequires:	gtk-doc-automake
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.6.0
