@@ -123,6 +123,8 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/locale/bn{_IN,}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/glade3/modules/libgladexfce4.{a,la}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/libxfce4.{a,la}
 
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+
 %find_lang %{name}
 
 %clean
