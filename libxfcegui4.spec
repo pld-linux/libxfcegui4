@@ -5,12 +5,12 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.6.1
-Release:	5
+Version:	4.7.0
+Release:	0.1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	539cff747634b8ee6f0d2362ee78a286
+Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	6614e26739cf1500553d79b2ed1a4e5b
 URL:		http://www.xfce.org/projects/libraries/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -138,14 +138,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libxfce4kbd-private.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxfce4kbd-private.so.5
 %attr(755,root,root) %{_libdir}/libxfcegui4.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxfcegui4.so.4
 %attr(755,root,root) %{_libdir}/libglade/2.0/libxfce4.so
 %{_iconsdir}/hicolor/*/apps/*.png
 %{_iconsdir}/hicolor/*/apps/*.svg
-%{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
 %files apidocs
 %defattr(644,root,root,755)
@@ -153,19 +150,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libxfce4kbd-private.so
 %attr(755,root,root) %{_libdir}/libxfcegui4.so
-%{_libdir}/libxfce4kbd-private.la
 %{_libdir}/libxfcegui4.la
-%{_includedir}/xfce4/libxfce4kbd-private
 %{_includedir}/xfce4/libxfcegui4
-%{_pkgconfigdir}/libxfce4kbd-private-1.0.pc
 %{_pkgconfigdir}/libxfcegui4-1.0.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libxfce4kbd-private.a
 %{_libdir}/libxfcegui4.a
 %endif
 
