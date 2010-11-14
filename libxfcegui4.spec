@@ -2,14 +2,15 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define		xfce_version	4.6.2
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.6.1
-Release:	5
+Version:	4.6.4
+Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+Source0:	http://www.xfce.org/archive/%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	539cff747634b8ee6f0d2362ee78a286
 URL:		http://www.xfce.org/projects/libraries/
 BuildRequires:	autoconf >= 2.50
@@ -23,16 +24,16 @@ BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgladeui-devel >= 3.0.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4util-devel >= %{version}
+BuildRequires:	libxfce4util-devel >= %{xfce_version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= 4.6.0
-BuildRequires:	xfconf-devel >= %{version}
+BuildRequires:	xfconf-devel >= %{xfce_version}
 BuildRequires:	xorg-lib-libSM-devel
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
-Requires:	xfconf >= %{version}
+Requires:	xfconf >= %{xfce_version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -59,9 +60,9 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libxfcegui4
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.6
-Requires:	libxfce4util-devel >= %{version}
+Requires:	libxfce4util-devel >= %{xfce_version}
 Requires:	startup-notification-devel >= 0.8
-Requires:	xfconf-devel >= %{version}
+Requires:	xfconf-devel >= %{xfce_version}
 Requires:	xorg-lib-libSM-devel
 
 %description devel
