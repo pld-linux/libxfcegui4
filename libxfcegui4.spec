@@ -10,8 +10,8 @@ Version:	4.6.4
 Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://www.xfce.org/archive/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	539cff747634b8ee6f0d2362ee78a286
+Source0:	http://www.xfce.org/archive/xfce/%{xfce_version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	88de59b222cb9977f93a4c61011c1e1f
 URL:		http://www.xfce.org/projects/libraries/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
