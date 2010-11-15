@@ -12,8 +12,6 @@ Group:		X11/Libraries
 Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	6614e26739cf1500553d79b2ed1a4e5b
 URL:		http://www.xfce.org/projects/libraries/
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
@@ -22,7 +20,6 @@ BuildRequires:	gtk-doc-automake
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgladeui-devel >= 3.0.0
-BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -98,16 +95,11 @@ Wsparcie dla libxfcegui4 w Glade 3.
 %setup -q
 
 %build
-%{__gtkdocize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir} \
 	%{!?with_static_libs:--disable-static}
+
 %{__make}
 
 %install
