@@ -5,30 +5,27 @@
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.7.0
-Release:	0.1
+Version:	4.8.0
+Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	6614e26739cf1500553d79b2ed1a4e5b
-URL:		http://www.xfce.org/projects/libraries/
+Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	74fe7b81051450785fa8270aed1e6e5c
+URL:		http://www.xfce.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	gtk-doc
 BuildRequires:	gtk-doc-automake
-BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgladeui-devel >= 3.0.0
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.6.0
-BuildRequires:	xfconf-devel >= %{version}
+BuildRequires:	xfce4-dev-tools >= 4.8.0
 BuildRequires:	xorg-lib-libSM-devel
-Requires(post,postun):	gtk+2
-Requires(post,postun):	hicolor-icon-theme
+Requires:	hicolor-icon-theme
 Requires:	xfconf >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,7 +55,6 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.6
 Requires:	libxfce4util-devel >= %{version}
 Requires:	startup-notification-devel >= 0.8
-Requires:	xfconf-devel >= %{version}
 Requires:	xorg-lib-libSM-devel
 
 %description devel
@@ -98,7 +94,8 @@ Wsparcie dla libxfcegui4 w Glade 3.
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir} \
-	%{!?with_static_libs:--disable-static}
+	%{!?with_static_libs:--disable-static} \
+	--disable-silent-rules
 
 %{__make}
 
@@ -113,6 +110,8 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/locale/bn{_IN,}
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/glade3/modules/libgladexfce4.{a,la}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/libxfce4.{a,la}
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
 
 %find_lang %{name}
 
