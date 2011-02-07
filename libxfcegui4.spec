@@ -25,6 +25,7 @@ BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= 4.8.0
 BuildRequires:	xorg-lib-libSM-devel
+Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 Requires:	xfconf >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -112,6 +113,7 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/locale/bn{_IN,}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/libxfce4.{a,la}
 
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name}
 
@@ -142,7 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libxfcegui4.so
-%{_libdir}/libxfcegui4.la
 %{_includedir}/xfce4/libxfcegui4
 %{_pkgconfigdir}/libxfcegui4-1.0.pc
 
