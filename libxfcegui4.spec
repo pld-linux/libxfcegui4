@@ -2,37 +2,32 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		xfce_version	4.6.2
+%define		xfce_version	4.8.0
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.6.4
-Release:	2
+Version:	4.8.0
+Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://www.xfce.org/archive/xfce/%{xfce_version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	88de59b222cb9977f93a4c61011c1e1f
-URL:		http://www.xfce.org/projects/libraries/
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
+Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	74fe7b81051450785fa8270aed1e6e5c
+URL:		http://www.xfce.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	gtk-doc
 BuildRequires:	gtk-doc-automake
-BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgladeui-devel >= 3.0.0
-BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{xfce_version}
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.6.0
-BuildRequires:	xfconf-devel >= %{xfce_version}
+BuildRequires:	xfce4-dev-tools >= 4.8.0
 BuildRequires:	xorg-lib-libSM-devel
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 Requires:	xfconf >= %{xfce_version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,7 +57,6 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.6
 Requires:	libxfce4util-devel >= %{xfce_version}
 Requires:	startup-notification-devel >= 0.8
-Requires:	xfconf-devel >= %{xfce_version}
 Requires:	xorg-lib-libSM-devel
 
 %description devel
@@ -99,16 +93,12 @@ Wsparcie dla libxfcegui4 w Glade 3.
 %setup -q
 
 %build
-%{__gtkdocize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir} \
-	%{!?with_static_libs:--disable-static}
+	%{!?with_static_libs:--disable-static} \
+	--disable-silent-rules
+
 %{__make}
 
 %install
@@ -123,7 +113,8 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/locale/bn{_IN,}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/glade3/modules/libgladexfce4.{a,la}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/libxfce4.{a,la}
 
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name}
 
@@ -141,14 +132,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libxfce4kbd-private.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxfce4kbd-private.so.5
 %attr(755,root,root) %{_libdir}/libxfcegui4.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxfcegui4.so.4
 %attr(755,root,root) %{_libdir}/libglade/2.0/libxfce4.so
 %{_iconsdir}/hicolor/*/apps/*.png
 %{_iconsdir}/hicolor/*/apps/*.svg
-%{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
 %files apidocs
 %defattr(644,root,root,755)
@@ -156,19 +144,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libxfce4kbd-private.so
 %attr(755,root,root) %{_libdir}/libxfcegui4.so
-%{_libdir}/libxfce4kbd-private.la
-%{_libdir}/libxfcegui4.la
-%{_includedir}/xfce4/libxfce4kbd-private
 %{_includedir}/xfce4/libxfcegui4
-%{_pkgconfigdir}/libxfce4kbd-private-1.0.pc
 %{_pkgconfigdir}/libxfcegui4-1.0.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libxfce4kbd-private.a
 %{_libdir}/libxfcegui4.a
 %endif
 
