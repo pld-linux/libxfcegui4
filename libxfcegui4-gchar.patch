@@ -1,0 +1,202 @@
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/session-client.c libxfcegui4-4.6.1/libxfcegui4/session-client.c
+--- libxfcegui4-4.6.1.orig//libxfcegui4/session-client.c	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/session-client.c	2011-12-13 11:05:33.647147846 +0000
+@@ -1213,27 +1213,27 @@
+     return session_client->program;
+ }
+ 
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_clone_command(SessionClient * session_client)
++const gchar* const * client_session_get_clone_command(SessionClient * session_client)
+ {
+     return (const gchar * const *) session_client->clone_command;
+ }
+ 
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_resign_command(SessionClient * session_client)
++const gchar* const * client_session_get_resign_command(SessionClient * session_client)
+ {
+     return (const gchar * const *) session_client->resign_command;
+ }
+ 
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_restart_command(SessionClient * session_client)
++const gchar* const * client_session_get_restart_command(SessionClient * session_client)
+ {
+     return (const gchar * const *) session_client->restart_command;
+ }
+ 
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_discard_command(SessionClient * session_client)
++const gchar* const * client_session_get_discard_command(SessionClient * session_client)
+ {
+     return (const gchar * const *) session_client->discard_command;
+ }
+ 
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_shutdown_command(SessionClient * session_client)
++const gchar* const * client_session_get_shutdown_command(SessionClient * session_client)
+ {
+     return (const gchar * const *) session_client->shutdown_command;
+ }
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/session-client.h libxfcegui4-4.6.1/libxfcegui4/session-client.h
+--- libxfcegui4-4.6.1.orig//libxfcegui4/session-client.h	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/session-client.h	2011-12-13 11:06:07.208147752 +0000
+@@ -157,9 +157,9 @@
+ gchar const* client_session_get_given_client_id(SessionClient * session_client);
+ gchar const* client_session_get_current_directory(SessionClient * session_client);
+ gchar const* client_session_get_program(SessionClient * session_client);
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_clone_command(SessionClient * session_client);
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_resign_command(SessionClient * session_client);
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_restart_command(SessionClient * session_client);
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_discard_command(SessionClient * session_client);
+-G_CONST_RETURN gchar* G_CONST_RETURN * client_session_get_shutdown_command(SessionClient * session_client);
++const gchar* const * client_session_get_clone_command(SessionClient * session_client);
++const gchar* const * client_session_get_resign_command(SessionClient * session_client);
++const gchar* const * client_session_get_restart_command(SessionClient * session_client);
++const gchar* const * client_session_get_discard_command(SessionClient * session_client);
++const gchar* const * client_session_get_shutdown_command(SessionClient * session_client);
+ #endif
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-appmenuitem.c libxfcegui4-4.6.1/libxfcegui4/xfce-appmenuitem.c
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-appmenuitem.c	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-appmenuitem.c	2011-12-13 11:04:17.153022200 +0000
+@@ -775,7 +775,7 @@
+  *
+  * Since 4.1
+  **/
+-G_CONST_RETURN gchar *
++const gchar *
+ xfce_app_menu_item_get_name(XfceAppMenuItem *app_menu_item)
+ {
+     g_return_val_if_fail(XFCE_IS_APP_MENU_ITEM(app_menu_item), NULL);
+@@ -792,7 +792,7 @@
+  *
+  * Since 4.1
+  **/
+-G_CONST_RETURN gchar *
++const gchar *
+ xfce_app_menu_item_get_icon_name(XfceAppMenuItem *app_menu_item)
+ {
+     g_return_val_if_fail(XFCE_IS_APP_MENU_ITEM(app_menu_item), NULL);
+@@ -809,7 +809,7 @@
+  *
+  * Since 4.1
+  **/
+-G_CONST_RETURN gchar *
++const gchar *
+ xfce_app_menu_item_get_command(XfceAppMenuItem *app_menu_item)
+ {
+     g_return_val_if_fail(XFCE_IS_APP_MENU_ITEM(app_menu_item), NULL);
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-appmenuitem.h libxfcegui4-4.6.1/libxfcegui4/xfce-appmenuitem.h
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-appmenuitem.h	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-appmenuitem.h	2011-12-13 11:05:51.886147765 +0000
+@@ -89,11 +89,11 @@
+ 													   
+ #define xfce_app_menu_item_set_image(mi, img) gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(mi), img)
+ 
+-G_CONST_RETURN gchar *xfce_app_menu_item_get_name     (XfceAppMenuItem *app_menu_item);
++const gchar *xfce_app_menu_item_get_name     (XfceAppMenuItem *app_menu_item);
+ 
+-G_CONST_RETURN gchar *xfce_app_menu_item_get_icon_name(XfceAppMenuItem *app_menu_item);
++const gchar *xfce_app_menu_item_get_icon_name(XfceAppMenuItem *app_menu_item);
+ 
+-G_CONST_RETURN gchar *xfce_app_menu_item_get_command  (XfceAppMenuItem *app_menu_item);
++const gchar *xfce_app_menu_item_get_command  (XfceAppMenuItem *app_menu_item);
+ 
+ gboolean xfce_app_menu_item_get_needs_term            (XfceAppMenuItem *app_menu_item);
+ 
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-colorbutton.c libxfcegui4-4.6.1/libxfcegui4/xfce-colorbutton.c
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-colorbutton.c	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-colorbutton.c	2011-12-13 11:04:02.318151808 +0000
+@@ -107,7 +107,7 @@
+ 
+ 
+ 
+-G_CONST_RETURN gchar *
++const gchar *
+ xfce_color_button_get_title (GtkColorButton *color_button)
+ {
+   return gtk_color_button_get_title (color_button);
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-colorbutton.h libxfcegui4-4.6.1/libxfcegui4/xfce-colorbutton.h
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-colorbutton.h	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-colorbutton.h	2011-12-13 11:05:43.501147875 +0000
+@@ -55,7 +55,7 @@
+ gboolean   xfce_color_button_get_use_alpha (XfceColorButton *color_button);
+ void       xfce_color_button_set_title     (XfceColorButton *color_button,
+                                             const gchar *title);
+-G_CONST_RETURN gchar *xfce_color_button_get_title
++const gchar *xfce_color_button_get_title
+                                            (XfceColorButton *color_button);
+ 
+ #endif  /* ifndef XFCE_DISABLE_DEPRECATED */
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-heading.c libxfcegui4-4.6.1/libxfcegui4/xfce-heading.c
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-heading.c	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-heading.c	2011-12-13 11:03:55.486148135 +0000
+@@ -609,7 +609,7 @@
+  *
+  * Since: 4.4.0
+  **/
+-G_CONST_RETURN gchar*
++const gchar*
+ xfce_heading_get_icon_name (XfceHeading *heading)
+ {
+   g_return_val_if_fail (XFCE_IS_HEADING (heading), NULL);
+@@ -662,7 +662,7 @@
+  *
+  * Since: 4.4.0
+  **/
+-G_CONST_RETURN gchar*
++const gchar*
+ xfce_heading_get_subtitle (XfceHeading *heading)
+ {
+   g_return_val_if_fail (XFCE_IS_HEADING (heading), NULL);
+@@ -713,7 +713,7 @@
+  *
+  * Since: 4.4.0
+  **/
+-G_CONST_RETURN gchar*
++const gchar*
+ xfce_heading_get_title (XfceHeading *heading)
+ {
+   g_return_val_if_fail (XFCE_IS_HEADING (heading), NULL);
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-heading.h libxfcegui4-4.6.1/libxfcegui4/xfce-heading.h
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-heading.h	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-heading.h	2011-12-13 11:05:56.719148017 +0000
+@@ -65,15 +65,15 @@
+ void                  xfce_heading_set_icon      (XfceHeading *heading,
+                                                   GdkPixbuf   *icon);
+ 
+-G_CONST_RETURN gchar *xfce_heading_get_icon_name (XfceHeading *heading);
++const gchar *xfce_heading_get_icon_name (XfceHeading *heading);
+ void                  xfce_heading_set_icon_name (XfceHeading *heading,
+                                                   const gchar *icon_name);
+ 
+-G_CONST_RETURN gchar *xfce_heading_get_subtitle  (XfceHeading *heading);
++const gchar *xfce_heading_get_subtitle  (XfceHeading *heading);
+ void                  xfce_heading_set_subtitle  (XfceHeading *heading,
+                                                   const gchar *subtitle);
+ 
+-G_CONST_RETURN gchar *xfce_heading_get_title     (XfceHeading *heading);
++const gchar *xfce_heading_get_title     (XfceHeading *heading);
+ void                  xfce_heading_set_title     (XfceHeading *heading,
+                                                   const gchar *title);
+ 
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-titled-dialog.c libxfcegui4-4.6.1/libxfcegui4/xfce-titled-dialog.c
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-titled-dialog.c	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-titled-dialog.c	2011-12-13 11:05:46.407147943 +0000
+@@ -328,7 +328,7 @@
+  *
+  * Since: 4.4.0
+  **/
+-G_CONST_RETURN gchar*
++const gchar*
+ xfce_titled_dialog_get_subtitle (XfceTitledDialog *titled_dialog)
+ {
+   g_return_val_if_fail (XFCE_IS_TITLED_DIALOG (titled_dialog), NULL);
+diff -ur libxfcegui4-4.6.1.orig//libxfcegui4/xfce-titled-dialog.h libxfcegui4-4.6.1/libxfcegui4/xfce-titled-dialog.h
+--- libxfcegui4-4.6.1.orig//libxfcegui4/xfce-titled-dialog.h	2008-10-23 07:20:45.000000000 +0000
++++ libxfcegui4-4.6.1/libxfcegui4/xfce-titled-dialog.h	2011-12-13 11:05:40.301147948 +0000
+@@ -66,7 +66,7 @@
+                                                            const gchar      *first_button_text,
+                                                            ...) G_GNUC_MALLOC;
+ 
+-G_CONST_RETURN gchar *xfce_titled_dialog_get_subtitle     (XfceTitledDialog *titled_dialog);
++const gchar *xfce_titled_dialog_get_subtitle     (XfceTitledDialog *titled_dialog);
+ void                  xfce_titled_dialog_set_subtitle     (XfceTitledDialog *titled_dialog,
+                                                            const gchar      *subtitle);
+ 
