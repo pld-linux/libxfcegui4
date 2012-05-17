@@ -2,16 +2,16 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		xfce_version	4.8.0
+%define		xfce_version	4.10.0
 Summary:	Various GTK+ widgets for Xfce
 Summary(pl.UTF-8):	Różne widgety GTK+ dla Xfce
 Name:		libxfcegui4
-Version:	4.8.0
+Version:	4.10.0
 Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	74fe7b81051450785fa8270aed1e6e5c
+Source0:	http://archive.xfce.org/src/archive/libxfcegui4/4.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	4025b9d6811f051c914cdd700d437e61
 URL:		http://www.xfce.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
@@ -24,7 +24,7 @@ BuildRequires:	libxfce4util-devel >= %{xfce_version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.8.0
+BuildRequires:	xfce4-dev-tools >= 4.10.0
 BuildRequires:	xorg-lib-libSM-devel
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
