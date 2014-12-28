@@ -14,7 +14,7 @@ Source0:	http://archive.xfce.org/src/archive/libxfcegui4/4.10/%{name}-%{version}
 # Source0-md5:	4025b9d6811f051c914cdd700d437e61
 URL:		http://www.xfce.org/
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	gtk-doc
 BuildRequires:	gtk-doc-automake
